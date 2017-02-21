@@ -1,6 +1,6 @@
 {
   "name": "formular-demo",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "description": "```bash\r Samling av lösningar i formulär och visas upp\r ```",
   "main": "index.js",
   "devDependencies": {

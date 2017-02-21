@@ -1,0 +1,215 @@
+
+<div class="row">
+    <div class="col-xs-12">
+        <span class="lead">Multiselect</span>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-xs-12">
+            <label class="rcc-bold" ng-bind="metadata['Opdata'].regvars.u_kompl_gastroint.label + ' komplikationer'"></label>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <span data-ng-controller="multiselectCheckboxController"
+            multiselectlistoptions="surgeryComplications"
+            multiselectmodel="complication"
+
+            multiselectcallback="gastroCompCallback"
+            tablesrc="Opdata"
+            multiselectconfig='{ "variables" : ["u_kompl_anastomoslack", "u_kompl_nekrosrekon", "u_kompl_subileus", "u_kompl_ileus", "u_kompl_kateter", "u_kompl_pylorotomi", "u_kompl_clostridium", "u_kompl_gastroblodning", "u_kompl_pankreatit", "u_kompl_leverdysf", "u_kompl_tomningrekonstr"]}'
+            >
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="control-label col-sm-3 rcc-bold">
+                        Välj Gastrointestinala komplikationer
+                    </label>
+                    <div class="col-xs-9">
+                        <ui-select multiple class="selectedblocked" limit="11" ng-model="complication.selected" on-select="onSelectCallback($item, $model)" on-remove="clearOptions($item, $model)" theme="bootstrap" ng-disabled="!postOpActive" title="Välj upp till 11 komplikationer">
+                            <ui-select-match placeholder="Välj upp till 11 komplikationer"><span ng-bind="$item.value"></span></ui-select-match>
+                            <ui-select-choices repeat="surgeryComplication in surgeryComplications | filter: $select.search">
+                                <div ng-bind-html="surgeryComplication.value | highlight: $select.search"></div>
+                            </ui-select-choices>
+                        </ui-select>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-show="complication.selected">
+                <div class="form-group">
+                    <div class="row">
+                        <label class="col-sm-3 col-xs-5 rcc-bold" title="Valda komplikationer">Komplikationer</label>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-repeat="selectedComp in complication.selected track by $index" ng-init="noOfComp = $index">
+                    <div class="row">
+                        <label class="control-label col-xs-3 rcc-bold">
+                            <span ng-bind="noOfComp !== undefined ? 'Komplikation ' + (noOfComp + 1) : ''"></span>
+                        </label>
+                        <div class="col-xs-9">
+                            <span><i class="fa fa-check-circle fa-lg fa-icon-success" aria-hidden="true"></i></span> <strong ng-bind="selectedComp.value"></strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </span>
+
+    </div>
+</div>
+<hr>
+
+<div class="row">
+    <div class="col-xs-12">
+        <span class="lead">Standard checkbox</span>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-xs-12">
+            <label class="rcc-bold" ng-bind="metadata['Opdata'].regvars.u_kompl_pulmonella.label + ' komplikationer'"></label>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <label class="control-label col-sm-3 rcc-bold">
+            {{metadata['Opdata'].regvars.u_kompl_pneumoni.label}}
+        </label>
+        <div class="col-xs-4">
+            <input type="checkbox"
+                section="postop" ng-disabled="!postOpActive"
+                ng-model="localData.regvars.u_kompl_pneumoni.value"
+                err-i-none-selected='{"target": "postop_pulmonella_comp", "variableArgs": ["u_kompl_pneumoni", "u_kompl_pleura", "u_kompl_pneumothorax", "u_kompl_atelektas", "u_kompl_andningssvikt", "u_kompl_ards", "u_kompl_trakebronkial", "u_kompl_thordran"], "label": "{{metadata["Opdata"].regvars.u_kompl_pulmonella.label}} komplikationer", "condition": "isPulmonella"}'>
+        </div>
+        <div class="col-xs-1" ng-show="isReviewer">
+            <%- include("../templates/standard/monitor-check.html", {regvar: "localData.regvars.u_kompl_pneumoni"}) %>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <label class="control-label col-sm-3 rcc-bold">
+            {{metadata['Opdata'].regvars.u_kompl_pleura.label}}
+        </label>
+        <div class="col-xs-4">
+            <input type="checkbox"
+                section="postop" ng-disabled="!postOpActive"
+                ng-model="localData.regvars.u_kompl_pleura.value"
+                err-i-none-selected='{"target": "postop_pulmonella_comp", "variableArgs": ["u_kompl_pneumoni", "u_kompl_pleura", "u_kompl_pneumothorax", "u_kompl_atelektas", "u_kompl_andningssvikt", "u_kompl_ards", "u_kompl_trakebronkial", "u_kompl_thordran"], "label": "{{metadata["Opdata"].regvars.u_kompl_pulmonella.label}} komplikationer", "condition": "isPulmonella"}'>
+        </div>
+        <div class="col-xs-1" ng-show="isReviewer">
+            <%- include("../templates/standard/monitor-check.html", {regvar: "localData.regvars.u_kompl_pleura"}) %>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <label class="control-label col-sm-3 rcc-bold">
+            {{metadata['Opdata'].regvars.u_kompl_pneumothorax.label}}
+        </label>
+        <div class="col-xs-4">
+            <input type="checkbox"
+                section="postop" ng-disabled="!postOpActive"
+                ng-model="localData.regvars.u_kompl_pneumothorax.value"
+                err-i-none-selected='{"target": "postop_pulmonella_comp", "variableArgs": ["u_kompl_pneumoni", "u_kompl_pleura", "u_kompl_pneumothorax", "u_kompl_atelektas", "u_kompl_andningssvikt", "u_kompl_ards", "u_kompl_trakebronkial", "u_kompl_thordran"], "label": "{{metadata["Opdata"].regvars.u_kompl_pulmonella.label}} komplikationer", "condition": "isPulmonella"}'>
+        </div>
+        <div class="col-xs-1" ng-show="isReviewer">
+            <%- include("../templates/standard/monitor-check.html", {regvar: "localData.regvars.u_kompl_pneumothorax"}) %>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <label class="control-label col-sm-3 rcc-bold">
+            {{metadata['Opdata'].regvars.u_kompl_atelektas.label}}
+        </label>
+        <div class="col-xs-4">
+            <input type="checkbox"
+                section="postop" ng-disabled="!postOpActive"
+                ng-model="localData.regvars.u_kompl_atelektas.value"
+                err-i-none-selected='{"target": "postop_pulmonella_comp", "variableArgs": ["u_kompl_pneumoni", "u_kompl_pleura", "u_kompl_pneumothorax", "u_kompl_atelektas", "u_kompl_andningssvikt", "u_kompl_ards", "u_kompl_trakebronkial", "u_kompl_thordran"], "label": "{{metadata["Opdata"].regvars.u_kompl_pulmonella.label}} komplikationer", "condition": "isPulmonella"}'>
+        </div>
+        <div class="col-xs-1" ng-show="isReviewer">
+            <%- include("../templates/standard/monitor-check.html", {regvar: "localData.regvars.u_kompl_atelektas"}) %>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <label class="control-label col-sm-3 rcc-bold">
+            {{metadata['Opdata'].regvars.u_kompl_andningssvikt.label}}
+        </label>
+        <div class="col-xs-4">
+            <input type="checkbox"
+                section="postop" ng-disabled="!postOpActive"
+                ng-model="localData.regvars.u_kompl_andningssvikt.value"
+                err-i-none-selected='{"target": "postop_pulmonella_comp", "variableArgs": ["u_kompl_pneumoni", "u_kompl_pleura", "u_kompl_pneumothorax", "u_kompl_atelektas", "u_kompl_andningssvikt", "u_kompl_ards", "u_kompl_trakebronkial", "u_kompl_thordran"], "label": "{{metadata["Opdata"].regvars.u_kompl_pulmonella.label}} komplikationer", "condition": "isPulmonella"}'>
+        </div>
+        <div class="col-xs-1" ng-show="isReviewer">
+            <%- include("../templates/standard/monitor-check.html", {regvar: "localData.regvars.u_kompl_andningssvikt"}) %>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <label class="control-label col-sm-3 rcc-bold">
+            {{metadata['Opdata'].regvars.u_kompl_ards.label}}
+        </label>
+        <div class="col-xs-4">
+            <input type="checkbox"
+                section="postop" ng-disabled="!postOpActive"
+                ng-model="localData.regvars.u_kompl_ards.value"
+                err-i-none-selected='{"target": "postop_pulmonella_comp", "variableArgs": ["u_kompl_pneumoni", "u_kompl_pleura", "u_kompl_pneumothorax", "u_kompl_atelektas", "u_kompl_andningssvikt", "u_kompl_ards", "u_kompl_trakebronkial", "u_kompl_thordran"], "label": "{{metadata["Opdata"].regvars.u_kompl_pulmonella.label}} komplikationer", "condition": "isPulmonella"}'>
+        </div>
+        <div class="col-xs-1" ng-show="isReviewer">
+            <%- include("../templates/standard/monitor-check.html", {regvar: "localData.regvars.u_kompl_ards"}) %>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <label class="control-label col-sm-3 rcc-bold">
+            {{metadata['Opdata'].regvars.u_kompl_trakebronkial.label}}
+        </label>
+        <div class="col-xs-4">
+            <input type="checkbox"
+                section="postop" ng-disabled="!postOpActive"
+                ng-model="localData.regvars.u_kompl_trakebronkial.value"
+                err-i-none-selected='{"target": "postop_pulmonella_comp", "variableArgs": ["u_kompl_pneumoni", "u_kompl_pleura", "u_kompl_pneumothorax", "u_kompl_atelektas", "u_kompl_andningssvikt", "u_kompl_ards", "u_kompl_trakebronkial", "u_kompl_thordran"], "label": "{{metadata["Opdata"].regvars.u_kompl_pulmonella.label}} komplikationer", "condition": "isPulmonella"}'>
+        </div>
+        <div class="col-xs-1" ng-show="isReviewer">
+            <%- include("../templates/standard/monitor-check.html", {regvar: "localData.regvars.u_kompl_trakebronkial"}) %>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <label class="control-label col-sm-3 rcc-bold">
+            {{metadata['Opdata'].regvars.u_kompl_thordran.label}}
+        </label>
+        <div class="col-xs-4">
+            <input type="checkbox"
+                section="postop" ng-disabled="!postOpActive"
+                ng-model="localData.regvars.u_kompl_thordran.value"
+                err-i-none-selected='{"target": "postop_pulmonella_comp", "variableArgs": ["u_kompl_pneumoni", "u_kompl_pleura", "u_kompl_pneumothorax", "u_kompl_atelektas", "u_kompl_andningssvikt", "u_kompl_ards", "u_kompl_trakebronkial", "u_kompl_thordran"], "label": "{{metadata["Opdata"].regvars.u_kompl_pulmonella.label}} komplikationer", "condition": "isPulmonella"}'>
+        </div>
+        <div class="col-xs-1" ng-show="isReviewer">
+            <%- include("../templates/standard/monitor-check.html", {regvar: "localData.regvars.u_kompl_thordran"}) %>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,289 @@
+.modal-divider {
+  border-bottom: 1px solid #e5e5e5;
+  min-height: 0.5em;
+}
+.block-margin {
+  margin-top: 25px;
+}
+.ui-select-multiple.selectedblocked .ui-select-match .ui-select-match-item {
+  display: block;
+  text-align: left;
+}
+.ui-select-multiple input.ui-select-search:not(.ng-touched) {
+  width: 100% !important;
+}
+.fa-icon-success {
+  color: green;
+}
+.remove-selectedopt {
+  display: inline-block;
+  position: absolute;
+  right: 30px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+}
+.remove-selectedopt-icon {
+  color: grey;
+}
+.remove-selectedopt-icon:hover {
+  color: #cc0000;
+}
+.ui-select-container[disabled] .remove-selectedopt {
+  visibility: hidden;
+}
+table.v-a-middle tr td.t-field {
+  vertical-align: middle;
+}
+table.v-a-middle tr td.t-field.value-m {
+  background-color: #f9f9f9;
+}
+.popover[content="tstadium-info.html"] {
+  max-width: 900px;
+}
+.popover[content="nstadium-info.html"] {
+  max-width: 900px;
+}
+.popover[content="mstadium-info.html"] {
+  max-width: 900px;
+}
+.popover[content="komorbasa-info.html"] {
+  max-width: 900px;
+}
+
+
+.panel-title {
+  font-weight: bold;
+}
+.panel-heading.collapsable {
+  cursor: pointer;
+}
+/* Visual effect made by 'biggates' */
+.panel-heading .accordion-toggle:after {
+  /* symbol for "opening" panels */
+  font-family: 'Glyphicons Halflings';
+  /* essential for enabling glyphicon */
+  content: "\e114";
+  /* adjust as needed, taken from bootstrap.css */
+  float: right;
+  /* adjust as needed */
+  color: grey;
+  /* adjust as needed */
+}
+.panel-heading .accordion-toggle.collapsed:after {
+  /* symbol for "collapsed" panels */
+  content: "\e080";
+  /* adjust as needed, taken from bootstrap.css */
+}
+html {
+  height: 100%;
+  overflow-y: scroll;
+}
+body {
+  font-size: 1.33em;
+}
+.form-group {
+  margin-bottom: 5px;
+}
+.form-group div p {
+  padding-top: 4px;
+}
+.form-control[disabled] {
+  background-color: #f4f4f4;
+  border: 1px solid #dfdfdf;
+}
+.input-group.date .input-group-addon {
+  padding: 5px 12px;
+}
+input[type=text].form-control {
+  height: 28px;
+  padding: 3px 8px;
+}
+select.form-control {
+  height: 28px;
+  padding: 3px 8px;
+}
+input[type=text].form-control.input-sm {
+  height: 22px;
+  padding: 2px 6px;
+}
+.popover {
+  width: 400px;
+}
+.bspacer {
+  margin-bottom: 2%;
+}
+.form-control-inline {
+  min-width: 0;
+  width: auto;
+  display: inline;
+}
+label {
+  font-weight: normal;
+  padding-top: 4px;
+  margin-bottom: 2px;
+}
+ul.rcc-content {
+  border: 0;
+  margin: 0;
+  padding: 5px;
+  list-style: none;
+}
+ul.rcc-content li {
+  clear: both;
+  list-style: none;
+  padding: 2px;
+}
+.rcc-floatl {
+  float: left;
+}
+.rcc-floatr {
+  float: right;
+}
+.rcc-large {
+  font-size: 115%;
+}
+.rcc-larger {
+  font-size: 133%;
+}
+.rcc-small {
+  font-size: 90%;
+}
+.rcc-smaller {
+  font-size: 75%;
+}
+.rcc-right {
+  text-align: right;
+}
+.rcc-center {
+  text-align: center;
+}
+.rcc-valbot {
+  vertical-align: bottom;
+}
+.rcc-valmid {
+  vertical-align: middle;
+}
+.rcc-valsup {
+  vertical-align: super;
+}
+.rcc-bold {
+  font-weight: bold;
+}
+.rcc-italic {
+  font-style: italic;
+}
+.rcc-blue {
+  color: #3f48cc;
+}
+.rcc-green {
+  color: #2e8b57;
+}
+.rcc-red {
+  color: #B90909;
+}
+.rcc-error {
+  color: #B90909;
+}
+.rcc-warning {
+  color: #fd9935;
+}
+.rcc-invalid {
+  border-color: #B90909;
+}
+.rcc-invalid:focus {
+  border-color: #B90909;
+  -webkit-box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.075), 0 0 6px #B40404;
+  box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.075), 0 0 6px #B40404;
+}
+.rcc-included {
+  border-color: #3f48cc;
+}
+.rcc-included:focus {
+  border-color: #3f48cc;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #3440c0;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #3440c0;
+}
+.rcc-include-icon {
+  color: #a9a9a9;
+}
+.rcc-included-icon {
+  color: #3f48cc;
+}
+.paddl {
+  padding-left: 20px;
+}
+.rcc-icon {
+  cursor: pointer;
+}
+.inline-table {
+  display: inline-table;
+}
+.rcc-i010 {
+  padding-left: 10px;
+}
+.rcc-i015 {
+  padding-left: 15px;
+}
+.rcc-i020 {
+  padding-left: 20px;
+}
+.rcc-i025 {
+  padding-left: 25px;
+}
+.rcc-i030 {
+  padding-left: 30px;
+}
+.rcc-i040 {
+  padding-left: 40px;
+}
+.rcc-i050 {
+  padding-left: 50px;
+}
+.rcc-i075 {
+  padding-left: 75px;
+}
+.rcc-m010 {
+  margin-left: 10px;
+}
+.rcc-m020 {
+  margin-left: 20px;
+}
+.rcc-m025 {
+  margin-left: 25px;
+}
+.rcc-m030 {
+  margin-left: 30px;
+}
+.rcc-m040 {
+  margin-left: 40px;
+}
+.rcc-help:hover {
+  color: #00adf2;
+  text-decoration: none;
+  cursor: help;
+}
+.hidden {
+  visibility: hidden;
+}
+.no-show {
+  display: none;
+}
+div.checkboxes-inline {
+  display: inline-block;
+}
+#canceranm-popup-btn {
+  float: right;
+}
+
+
+.red {
+  color: red;
+}
+.glyphicon-remove {
+  color: red;
+}
+.glyphicon-warning-sign {
+  color: orange;
+}
+

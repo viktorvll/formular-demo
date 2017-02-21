@@ -1,0 +1,28 @@
+{
+  "name": "formular-demo",
+  "version": "1.0.0",
+  "description": "```bash\r Samling av lösningar i formulär och visas upp\r ```",
+  "main": "index.js",
+  "devDependencies": {
+    "angular-mocks": "^1.3.13",
+    "browser-sync": "^2.18.2",
+    "cross-env": "^3.1.4",
+    "gulp": "^3.9.1",
+    "gulp-conventional-changelog": "^1.1.0",
+    "gulp-ejs": "^2.2.1",
+    "gulp-inject": "^4.1.0",
+    "gulp-less": "^3.3.0",
+    "jest": "^17.0.3",
+    "path": "^0.12.7",
+    "wiredep": "^4.0.0"
+  },
+  "scripts": {
+    "install": "bower install",
+    "version": "gulp changelog && git add -A CHANGELOG.md",
+    "postversion": "git push && git push --tags",
+    "test": "jest",
+    "start": "node localserver.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

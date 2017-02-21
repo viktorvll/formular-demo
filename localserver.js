@@ -6,7 +6,7 @@
 
     function refreshPage() {
         browserSync.watch([
-            'main.html',
+            'index.html',
             'nrev.html'
         ]).on('change', browserSync.reload);
     }
@@ -16,7 +16,7 @@
 		browser: 'chrome',
 		server: {
 			baseDir: ["./"],
-			index: 'main.html'
+			index: 'index.html'
 		}
 	}, refreshPage);
 

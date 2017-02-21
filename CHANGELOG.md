@@ -1,3 +1,13 @@
+<a name="1.1.1"></a>
+## [1.1.1](https://github.com/viktorvll/formular-demo/compare/v1.1.0...v1.1.1) (2017-02-21)
+
+
+### Bug Fixes
+
+* **gitignore:** do not ignore folder dist because of bower_components dist folders ([1a067a9](https://github.com/viktorvll/formular-demo/commit/1a067a9))
+
+
+
 <a name="1.1.0"></a>
 # 1.1.0 (2017-02-21)
 

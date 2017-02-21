@@ -1,6 +1,7 @@
 'use strict';
 
-var conventionalChangelog = require('gulp-conventional-changelog');
+var gulp = require('gulp'),
+	conventionalChangelog = require('gulp-conventional-changelog');
 
 gulp.task('changelog', function () {
 	return gulp.src('CHANGELOG.md', {
